@@ -93,7 +93,7 @@ func main() {
 	oaToken := oauth1.NewToken(cfg.TwitterAppToken, cfg.TwitterAppSecret)
 	cl := oaConfig.Client(oauth1.NoContext, oaToken)
 
-	mid, err := uploadMedia(cl, gb, "")
+	mid, err := uploadMedia(cl, gb, atxt)
 	if err != nil {
 		log.Fatal("uploading graph as media:", err)
 	}
