@@ -75,7 +75,7 @@ func main() {
 	}
 
 	p := message.NewPrinter(message.MatchLanguage("en"))
-	stxt := p.Sprintf("Week ending %s had %d passengers", lastWeek.end.Format("Mon Jan 02"), lastWeek.count)
+	stxt := p.Sprintf("Week ending %s had %d passengers", lastWeek.end.Format("Mon Jan 2"), lastWeek.count)
 	atxt := altText(data, p)
 	log.Printf("at=tweet stxt=%q len=%d atxt=%q", stxt, len(stxt), atxt)
 
@@ -225,7 +225,7 @@ func graph(data []week) ([]byte, error) {
 	xs := make([]string, 0, len(data))
 	counts := make(plotter.Values, 0, len(data))
 	for _, w := range data {
-		xs = append(xs, w.end.Format("Jan 02"))
+		xs = append(xs, w.end.Format("Jan 2"))
 		counts = append(counts, float64(w.count))
 	}
 
